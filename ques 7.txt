@@ -1,0 +1,49 @@
+/* write a programme to dislay the following menu and accept 
+   user's choice and perform the corresponding operation*/
+
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+ int len,bre,area,side,radius,choice;
+ float car;
+char  ch;
+ do
+ {
+ clrscr();
+ cout<<"\ area calculation";
+ cout<<"\n 1. rectangle";
+ cout<<"\n 2.square";
+ cout<<"\n 3. circle";
+ cout<<"\n 4. exit";
+ cout<<"\n enter your choice";
+ cin>> choice;
+ switch(choice)
+ {
+   case 1: cout<<" enter the length and breadth";
+   cin>>len>>bre;
+   area=len*bre;
+   cout<<"area="<<area;
+   getch();
+   break;
+   case 2: cout<<"enter the side";
+   cin>>side;
+   area=side*side;
+   cout<<"area="<<area;
+   getch();
+   break;
+   case 3:cout<<"enter the radius";
+   cin>>radius;
+   car=3.14*radius*radius;
+   cout<<"area="<<car;
+   getch();
+   break;
+case 4: exit(0);
+break;
+   }   
+cout<<"do u wish to continue?";
+cin>>ch;
+} while(ch=='Y' || ch=='y')
+   getch();
+   }
+

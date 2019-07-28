@@ -1,0 +1,29 @@
+/* write a programme to accpet a character from user, if the entered
+character is in uppercase, generate next 2 characters and if lowercase
+character generate previous 2 characters*/
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+  clrscr();
+  char ch, alp, bet;
+  cout<<"enter a character";
+  cin>>ch;
+  if(ch>=65&&ch<=90)
+  {
+   alp=ch+1;
+   bet=ch+2;
+   cout<<alp<<endl<<bet;
+   }
+   else if(ch>=97&&ch<=122)
+   {
+    alp=ch-1;
+    bet=ch-2;
+    cout<<alp<<endl<<bet;
+    }
+    else
+    {
+    cout<<"it is a wrong character";
+    }
+    getch();
+    }

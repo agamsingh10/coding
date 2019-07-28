@@ -1,0 +1,27 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+  clrscr();
+  int num, rev=0,rem,num1;
+  cout<<"enter a number";
+  cin>>num;
+  num1=num;
+  while(num!=0)
+  {
+   rem=num%10;
+   rev=(rev*10)+rem;
+   num=num/10;
+   }
+   cout<<"reversed number is"<<rev<<endl;
+   if ( rev==num1)
+   {
+    cout<<"it is a palindrome";
+    }
+    else
+    {
+     cout<<"it is not a palindrome";
+     }
+     getch();
+     }
+

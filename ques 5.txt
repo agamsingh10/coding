@@ -1,0 +1,18 @@
+/* using conditional operator calculate bonus as if salary>100000, bonus 20% between 
+5000 and 100000 bonus 11% else bonus 10%*/
+
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+  clrscr();
+ long  int sal,bonus,fs;
+  cout<<"enter the salary";
+  cin>>sal;
+  bonus=sal>100000?0.2*sal:sal>75000?0.11*sal:0.1*sal;
+  fs=sal+bonus;
+  cout<<"bonus="<<bonus;
+  cout<<"\n final salary"<<fs;
+  getch();
+  }
+
