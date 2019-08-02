@@ -1,0 +1,42 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+int vct[1000],n,j,k,a=0;
+cout<<"Enter Total no of values to be entered\n";
+cin>>n;
+cout<<"\nEnter the values\n";
+for(int i=0;i<n;i++)
+{
+cin>>vct[i];
+}
+cout<<"Original vector\n";
+for(i=0;i<n;++i)
+{cout<<" "<<vct[i];
+}
+
+for(i=0;i<n-1;++i)
+{for(j=i+1;j<n;++j)
+   {
+   if (vct[j]==vct[i])
+   {n=n-1;
+    for(k=j;k<n;++k)
+        { vct[k]=vct[k+1];
+        a=1;
+      j=j-1;
+       }
+}
+}
+}
+if(a==0)
+   {cout<<"\nVector is without duplicates";
+    }
+else
+{
+cout<<"\nNew vector is \n";
+for(i=0;i<n;i++)
+{cout<<" "<<vct[i];
+}
+}
+getch();
+}

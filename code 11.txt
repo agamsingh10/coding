@@ -1,0 +1,163 @@
+/mini project
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<process.h>
+struct Item
+{
+int itemno;
+char name[20];
+float price;
+int qty;
+};
+
+Item arr[30];    //GLOBAL
+
+int n=0 ;
+void add()
+{
+ int i;
+cout<<"HOW MANY RECORDS YOU WISH TO ENTER";
+cin>>n;
+for(i=0;i<n;i++)
+{
+cout<<"ENTER ITEM NUMBER";
+cin>>arr[i].itemno;
+cout<<"ENTER NAME OF ITEM";
+gets(arr[i].name);
+cout<<"ENTER PRICE OF ITEM";
+cin>>arr[i].price;
+
+cout<<"ENTER THE QUANTITY OF ITEM";
+cin>>arr[i].qty;
+}
+
+}
+
+void modify()
+{
+int ino;
+cout<<"WHICH ITEM DO YOU WISH TO MODIFY";
+cin>>ino;
+for(int k=0;k<=n-1;k++)
+{
+if( arr[k].itemno==ino)
+{
+cout<<arr[k].itemno;
+cout<<arr[k].name;
+cout<<arr[k].price;
+cout<<arr[k].qty;
+cout<<"ENTER NEW VALUES";
+cin>>arr[k].itemno;
+gets(arr[k].name);
+cin>>arr[k].price;
+cin>>arr[k].qty;
+}
+}
+}
+
+
+void deleterecords()
+{
+int ino,pos;
+cout<<"WHICH ITEM NO TO BE DELETED?";
+cin>>ino;
+
+for(int k=0;k<=n-1;k++)
+{
+	if( arr[k].itemno==ino)
+	{
+		pos = k;
+		break;
+	}
+}
+
+int i;
+for(i=pos;pos<=n-2;i++)
+{
+	arr[i]=arr[i+1];
+}
+n--;
+
+}
+
+void display()
+{
+
+cout<<"Item no \t name \t quantity\t price"<<endl;
+
+for(int k=0;k<=n-1;k++)
+{
+		cout<<arr[k].itemno<<"\t";
+		cout<<arr[k].name<<"\t";
+		cout<<arr[k].price<<"\t";
+		cout<<arr[k].qty<<endl;
+ }
+
+ }
+
+ void display_particular()
+{
+
+int ino;
+cout<<"Enter Item Number whose quantity is to be displayed"<<endl;
+
+cin>>ino;
+
+for(int k=0;k<=n-1;k++)
+{
+	if(arr[k].itemno ==ino)
+	{
+		cout<<arr[k].qty<<endl;
+	 }
+
+ }
+
+ }
+
+
+
+
+
+
+void main()
+{
+int choice;
+
+char ch;
+clrscr();
+do
+{
+     cout<<"1. ENTER RECORDS\n2. MODIFY\n3. DELETE\n4. DISPLAY\n5.Display_Particular\n6. EXIT"<<endl;
+      cout<<"ENTER CHOICE"<<endl;
+      cin>>choice;
+      switch(choice)
+      {
+    case 1:add();
+	   break;
+    case 2:modify();
+	   break;
+    case 3:deleterecords();
+	   break;
+    case 4:display();
+	   break;
+    case 5:display_particular();
+		break;
+    case 6:exit(0);
+	   break;
+    default:cout<<"WRONG CHOICE ENTERED";
+  }
+  cout<<"DO YOU WISH TO CONTINUE Y OR n "<<endl;
+  ch=getch();
+    }while(ch=='y'||ch=='Y');
+  getch();
+
+
+    }
+
+
+
+
+
+
+

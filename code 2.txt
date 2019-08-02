@@ -1,0 +1,19 @@
+/fibonacci series
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+  clrscr();
+  int num,a=0,b=1,c,i;
+  cout<<"how many terms of fibonacci series to be displayed?";
+  cin>>num;
+  for (i=1;i<=num;i++)
+  {
+    c=a+b;
+    cout<<c<<endl;
+    a=b;
+    b=c;
+    }
+    getch();
+    }
+

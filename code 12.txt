@@ -1,0 +1,26 @@
+/counting number of spaces, words amd sentences
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+void main()
+{
+char str[1000];
+int i,l,sp=0,snt=0,m=0;
+cout<<"Enter the string\n";
+gets(str);
+l=strlen(str);
+for(i=0;str[i]!='\0';i++)
+{if(str[i]==' ')
+    {sp++;
+    }
+ if(str[i]=='M'||str[i]=='m')
+   {m++;
+   }
+ if(str[i]=='.')
+   {snt++;
+   }
+}
+cout<<"No of spaces = "<<--sp<<"\nNo of words = "<<++sp<<"\nNo of sentences = "<<snt<<"\nNo of words starting with 'm' or 'M' = "<<m;
+getch();
+}
