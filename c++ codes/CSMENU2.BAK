@@ -1,0 +1,188 @@
+#define sub "enter choice"
+#include<conio.h>
+#include<iostream.h>
+#include<stdio.h>
+#include<process.h>
+struct item
+{int no;
+int price;
+char name[10];
+int quantity;
+char discount;
+ };
+
+ item a[20];
+  int n;
+ char ch;
+ void add();
+ void del();
+ void search();
+ int  choice;
+ void menu();
+ void update();
+ void search1();
+ void display();
+
+ void main()
+ {clrscr();
+  do
+ { cout<<"products detail"<<endl;
+ cout<<"1.adding of records"<<endl<<"2.modify"<<endl<<"3.deletion of item"<<endl<<"4.search/display"<<endl<<"5.exit"<<endl;
+ cout<<sub;
+ cin>>choice;
+ switch(choice)
+ { case 1:add();
+ break;
+ case 2: update();
+ break;
+ case 3:del();
+ break;
+ case 4: menu();
+ break;
+ case 5: exit(0);
+ }
+ cout<<"do u wish to continue y or n" ;
+ cin>>ch;
+ }while( ch=='y')   ;
+ getch();
+ }
+ void menu()
+ {  int c;
+
+   do{
+   cout<<"1. item no" <<endl<<"2.discount"<<endl<<"3.exit"<<endl;
+  cout<<sub;
+  cin>>c;
+
+  switch(c)
+  { case 1 : search();
+  break;
+  case 2: search1();
+  break;
+  case 3: break;
+  }
+  }while(c!=3);
+
+ return;
+  }
+
+  void add()
+  { ;
+   cout<<" enter items" <<endl  ;
+  cin>>n  ;
+  for(int i=0 ; i< n;i++)
+  { cout<<"enter number"<<endl ;
+  cin>>a[i].no ;
+  cout<<"enter price" <<endl;
+  cin>>a[i].price;
+  cout<<"enter name"<<endl ;
+  gets(a[i]. name);
+  cout <<"enter quantity"<<endl ;
+  cin>>a[i].quantity;
+  cout<<"enter discount yes  or no"<<endl ;
+  cin>>a[i].discount;
+  }
+  display();
+  getch();
+
+  return;
+  }
+  void display()
+  {
+   for(int i=0;i<n;i++)
+  { cout<<a[i].no<<"\t"<<a[i].price<<"\t"<<a[i].name<<"\t"<<a[i].quantity<<"\t"<<a[i].discount<<endl;
+   }
+   }
+
+
+
+
+ void search ()
+ {
+
+  int m, flag;
+  cout<<"enter item number to be searched";
+  cin>>m;
+
+  for (int i=0 ;i<n;i++)
+  {
+	if( a[i].no==m)
+	  {
+		flag=0  ;
+		cout<<a[i].no<<"\t"<<a[i].price<<"\t"<<a[i].name<<"\t"<<a[i].quantity<<" "<<a[i].discount<<endl;
+		break;
+	  }
+	  else
+		 flag=1;
+   }
+
+  if(flag==1)
+	cout<<"Not available"<<endl;
+
+  }
+  void search1()
+  {
+
+  int flag=1;
+
+  for (int i=0 ; i<n;i++)
+  {
+	if( a[i].discount=='y')
+	  {
+		flag=0  ;
+		cout<<a[i].no<<"\t"<<a[i].price<<"\t"<<a[i].name<<"\t"<<a[i].discount<<endl;
+
+	  }
+
+   }
+
+  if(flag==1)
+	cout<<"Not available"<<endl;
+	}
+	void update()
+{
+int ino;
+cout<<"WHICH ITEM DO YOU WISH TO MODIFY";
+cin>>ino;
+for(int k=0;k<=n-1;k++)
+{
+if( a[k].no==ino)
+{
+cout<<a[k].no;
+cout<<a[k].name;
+cout<<a[k].price;
+cout<<a[k].quantity;
+cout<<"ENTER NEW VALUES";
+cin>>a[k].no;
+gets(a[k].name);
+cin>>a[k].price;
+cin>>a[k].quantity;
+}
+}
+}
+
+
+void del()
+{
+int ino,pos;
+cout<<"WHICH ITEM NO TO BE DELETED?";
+cin>>ino;
+
+for(int k=0;k<=n-1;k++)
+{
+	if( a[k].no==ino)
+	{
+		pos = k;
+		break;
+	}
+}
+
+int i;
+for(i=pos;pos<=n-2;i++)
+{
+	a[i]=a[i+1];
+}
+n--;
+display();
+
+}

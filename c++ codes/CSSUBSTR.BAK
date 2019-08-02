@@ -1,0 +1,44 @@
+// TO DISPLAY A SUBSTRING FROM A STRING.
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+void substring(char ch[] , int pos1 ,int pos2) ;
+
+void main()
+{
+	clrscr();
+	char ch[30];
+	int pos1 , pos2 ;
+	cout<<"Enter the string ";
+	gets(ch);
+	cout<<"Enter the first position";
+	cin>>pos1;
+	cout<<"Enter the last position";
+	cin>>pos2;
+	substring(ch,pos1,pos2);
+	getch();
+}
+
+void substring(char ch[] , int pos1 ,int pos2)
+{
+	char sub[30];
+	int k;
+	if(pos2>strlen(ch))
+	{
+		cout<<"ending position cannot exceed string length"<<endl;
+	}
+	else{
+	for(int i=pos1,k=0;i<=pos2;i++)
+	{
+		sub[k]=ch[i];
+		k++;
+	}
+
+	sub[k]='\0';
+	cout<<"substring is "<<sub<<endl;
+	}
+}
+
+
+

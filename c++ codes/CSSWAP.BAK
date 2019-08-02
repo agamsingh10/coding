@@ -1,0 +1,28 @@
+//write a progrom to swap two numbers.
+
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+
+int swap(int a,int b);
+int a,b;
+cout<<"enter number 1 " ;
+cin>>a     ;
+cout<<"enter number 2 " ;
+cin>>b;
+cout<<"Original values "<<endl<<"a= "<<a<<endl<<"b= "<<b;
+swap(a,b);
+getch();
+
+}
+int swap(int a,int b)
+{int c;
+c=a;
+a=b;
+b=c;
+
+cout<<"\nAfter swapping "<<endl<<"a= "<<a<<endl<<"b= "<<b;
+return 0;
+}

@@ -1,0 +1,32 @@
+// TO DISPLAY NUMBERS BELOW THE DIAGONAL IN A MATRIX
+
+#include<iostream.h>
+#include<conio.h>
+
+
+void main()
+{clrscr();
+int i,j,a[20][20],m , n;
+cout<< " enter order of matrix";
+cin>>m>>n;
+  for( i=0; i<m ;i++)
+  { for(j=0;j<n;j++)
+  { cout<<"element number  "<<j+1<<" ";
+  cin>>a[i][j] ;
+
+  }
+  }
+   for( i=0; i<m ;i++)
+  { for(j=0;j<n;j++)
+  {
+  cout<<a[i][j]<<" ";
+  }  cout<<endl;
+  }
+   for( i=0; i<m ;i++)
+  { for(j=0;j<n;j++)
+  { if(i>j)
+  cout<<a[i][j]<<" ";
+  }  cout<<endl;
+  }
+  getch();
+  }
