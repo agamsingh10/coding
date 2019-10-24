@@ -1,4 +1,4 @@
-/fibonacci series
+//fibonacci series
 #include<iostream.h>
 #include<conio.h>
 void main()
